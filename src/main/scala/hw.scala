@@ -23,7 +23,24 @@ object Hi {
     < Link: <https://api.github.com/organizations/1536176/events?page=2>; rel="next", <https://api.github.com/organizations/1536176/events?page=10>; rel="last"
     < Access-Control-Expose-Headers: ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval
     *
+    * ***** Preparing the response summary:
+    * ** common fields
+    * id
+    * type
+    * actor.display_login
+    * actor.avatar_url
+    * repo.name
+    * created_at (ISO8601 date-time)
+    * org.login
+    * org.avatar_url
     *
+    * Event types:
+    *     "type": "DeleteEvent",
+    *     "type": "CreateEvent",
+    *     "type": "ReleaseEvent",
+    *     "type": "IssuesEvent",
+
+
     */
 
   def getOrganizationEvents(org: String): HttpResponse[String] = {
